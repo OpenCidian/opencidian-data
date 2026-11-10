@@ -1,0 +1,8 @@
+target: { char: "爸" }
+field: hanviet.readings
+set: ["ba", "bả"]
+reason: Not in Thiều Chửu (catusf/tudien) or Unihan kVietnamese, so the HSK 1 character had no Hán Việt
+evidence: hvdic.thivien.net/whv/爸 (Âm Hán Việt ba, bả)
+by: phucbm
+issue: 1
+date: 2026-11-10

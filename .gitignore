@@ -8,3 +8,7 @@ node_modules/
 
 # Build output (npm run build); CI publishes it as a release
 dist/
+
+# Personal session handoffs (perxel-handoff)
+.claude/handoffs.md
+.claude/handoffs/

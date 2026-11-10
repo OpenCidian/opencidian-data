@@ -1,0 +1,31 @@
+{
+  "name": "opencidian-data",
+  "version": "0.1.0",
+  "private": true,
+  "description": "OpenCidian by Perxel: the open Chinese ↔ Vietnamese dictionary data (pinned sources, corrections, build).",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "fetch-sources": "tsx scripts/fetch-sources.ts",
+    "build": "tsx scripts/build.ts",
+    "validate": "tsx scripts/validate.ts",
+    "release": "tsx scripts/release.ts",
+    "schema": "tsx scripts/schema.ts",
+    "compare:hch": "tsx scripts/compare-hieu-chu-han.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test test/*.test.ts"
+  },
+  "dependencies": {
+    "fflate": "^0.8.3",
+    "yaml": "^2.9.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}

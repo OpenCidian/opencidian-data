@@ -1,0 +1,17 @@
+{
+  "id": "hsk",
+  "name": "Complete HSK Vocabulary",
+  "homepage": "https://github.com/drkameleon/complete-hsk-vocabulary",
+  "gives": "HSK 2.0 (levels 1-6) and HSK 3.0 (levels 1-6, 7-9) word lists",
+  "url": "https://raw.githubusercontent.com/drkameleon/complete-hsk-vocabulary/7ac65bf1a6387d35f1ade478906172a19311c7f9/complete.min.json",
+  "version": "main@7ac65bf1 (2026-03-23)",
+  "retrieved": "2026-11-10",
+  "sha256": "52d8e64ba65a6db4a38ea34302c6de5df53cdb5145254b25edcbf93b80676434",
+  "license": {
+    "id": "MIT",
+    "url": "https://opensource.org/license/mit",
+    "file": "LICENSE"
+  },
+  "credit": "Complete HSK Vocabulary by Yanis Zafirópulos (drkameleon)",
+  "notes": "Only the level lists are used. Its frequency ranks and parts of speech come from SUBTLEX-CH and HanLP, whose terms are not settled for us (plan 001, open question 1), so they are not used. The undocumented 't' level codes are not used either."
+}

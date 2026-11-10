@@ -1,0 +1,44 @@
+name: Release dataset
+
+# On merge to main, when the data can have changed: build, validate and publish the dataset as a GitHub release.
+# Loading it into opencidian-api (POST /internal/sync) comes with plan 001 step 6.
+on:
+  push:
+    branches: [main]
+    paths: ["sources/**", "corrections/**", "scripts/**", "package-lock.json"]
+  workflow_dispatch:
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/cache@v6
+        with:
+          path: .cache/sources
+          key: sources-${{ hashFiles('sources/*/source.json') }}
+      - run: npm ci
+      - run: npm run fetch-sources
+      - run: npm run validate
+      - run: npm run build
+      - run: npm run release
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          v=$(cat dist/release/VERSION)
+          tag="data-${v//+/-}"
+          gh release create "$tag" dist/release/*.gz dist/release/meta.json dist/release/SHA256SUMS \
+            --title "Dataset $v" --notes-file <(node -e 'const m=require("./dist/meta.json");console.log(`Entries: ${m.counts.entries}, characters: ${m.counts.chars}, corrections: ${m.counts.corrections}.\n\nSources:\n`+m.sources.map(s=>`- ${s.name} ${s.version} (${s.license})`).join("\n")+`\n\nLicence: CC BY-SA 4.0. ${m.license.attribution}`)')

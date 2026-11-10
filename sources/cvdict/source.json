@@ -1,0 +1,17 @@
+{
+  "id": "cvdict",
+  "name": "CVDICT",
+  "homepage": "https://github.com/ph0ngp/CVDICT",
+  "gives": "Vietnamese meanings (translated line by line from CC-CEDICT)",
+  "url": "https://raw.githubusercontent.com/ph0ngp/CVDICT/c379d909e308343a247e51619f7839a2060a271c/CVDICT.u8",
+  "version": "main@c379d909 (2025-02-09; after release v1.0.0)",
+  "retrieved": "2026-11-10",
+  "sha256": "4dde4b204193efa9c192d7f7daeab1bb579c8ccd7c41ed90d1b6caee22ba0948",
+  "license": {
+    "id": "CC-BY-SA-4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "file": "../../LICENSE-DATA"
+  },
+  "credit": "CVDICT by Phong Phan",
+  "notes": "Upstream's last commit. The only tagged release is v1.0.0 (2024-11-06); the commits after it are fixes, so we pin the commit. Fixes to Vietnamese meanings that hold for everyone can also go upstream as a CVDICT issue or PR."
+}

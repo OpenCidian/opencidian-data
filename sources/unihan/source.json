@@ -1,0 +1,16 @@
+{
+  "id": "unihan",
+  "name": "Unihan (Unicode 18.0.0)",
+  "homepage": "https://www.unicode.org/charts/unihan.html",
+  "gives": "Hán Việt readings (kVietnamese), stroke counts (kTotalStrokes), radical-stroke (kRSUnicode), simplified/traditional variants",
+  "url": "https://www.unicode.org/Public/18.0.0/ucd/Unihan.zip",
+  "version": "18.0.0",
+  "retrieved": "2026-11-10",
+  "sha256": "4c93ea9c1f636451729a840978f1667a53886af37ba854fdcce109721c63d43e",
+  "license": {
+    "id": "Unicode-3.0",
+    "url": "https://www.unicode.org/license.txt",
+    "file": "LICENSE"
+  },
+  "credit": "Unicode Han Database (Unihan), © Unicode, Inc."
+}

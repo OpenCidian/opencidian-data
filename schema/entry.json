@@ -1,0 +1,270 @@
+{
+  "$id": "https://github.com/OpenCidian/opencidian-data/schema/entry.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "simp": {
+      "type": "string"
+    },
+    "trad": {
+      "type": "string"
+    },
+    "pinyin": {
+      "type": "string"
+    },
+    "pinyinNum": {
+      "type": "string"
+    },
+    "hanviet": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "char": {
+            "type": "string"
+          },
+          "trad": {
+            "type": "string"
+          },
+          "readings": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-zđàáảãạăằắẳẵặâầấẩẫậèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵ]{1,8}$"
+            }
+          },
+          "src": {
+            "type": "string",
+            "enum": [
+              "cc-cedict",
+              "cvdict",
+              "unihan",
+              "makemeahanzi",
+              "hsk",
+              "correction"
+            ]
+          },
+          "via": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "char",
+          "readings",
+          "src"
+        ]
+      }
+    },
+    "vi": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "senses": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "src": {
+              "type": "string",
+              "enum": [
+                "cc-cedict",
+                "cvdict",
+                "unihan",
+                "makemeahanzi",
+                "hsk",
+                "correction"
+              ]
+            }
+          },
+          "required": [
+            "senses",
+            "src"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "en": {
+      "type": "object",
+      "properties": {
+        "senses": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "src": {
+          "type": "string",
+          "enum": [
+            "cc-cedict",
+            "cvdict",
+            "unihan",
+            "makemeahanzi",
+            "hsk",
+            "correction"
+          ]
+        }
+      },
+      "required": [
+        "senses",
+        "src"
+      ]
+    },
+    "classifiers": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "simp": {
+                "type": "string"
+              },
+              "trad": {
+                "type": "string"
+              },
+              "pinyin": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "pinyinNum": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "simp",
+              "trad",
+              "pinyin",
+              "pinyinNum"
+            ]
+          }
+        },
+        "src": {
+          "type": "string",
+          "enum": [
+            "cc-cedict",
+            "cvdict",
+            "unihan",
+            "makemeahanzi",
+            "hsk",
+            "correction"
+          ]
+        }
+      },
+      "required": [
+        "items",
+        "src"
+      ]
+    },
+    "refs": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "simp": {
+                "type": "string"
+              },
+              "trad": {
+                "type": "string"
+              },
+              "pinyin": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "pinyinNum": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "simp",
+              "trad",
+              "pinyin",
+              "pinyinNum"
+            ]
+          }
+        },
+        "src": {
+          "type": "string",
+          "enum": [
+            "cc-cedict",
+            "cvdict",
+            "unihan",
+            "makemeahanzi",
+            "hsk",
+            "correction"
+          ]
+        }
+      },
+      "required": [
+        "items",
+        "src"
+      ]
+    },
+    "hsk": {
+      "type": "object",
+      "properties": {
+        "hsk2": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 6
+        },
+        "hsk3": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 7
+        },
+        "src": {
+          "type": "string",
+          "enum": [
+            "cc-cedict",
+            "cvdict",
+            "unihan",
+            "makemeahanzi",
+            "hsk",
+            "correction"
+          ]
+        }
+      },
+      "required": [
+        "src"
+      ]
+    },
+    "corrected": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "simp",
+    "trad",
+    "pinyin",
+    "pinyinNum",
+    "hanviet",
+    "vi",
+    "en"
+  ]
+}

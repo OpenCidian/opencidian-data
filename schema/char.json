@@ -1,0 +1,298 @@
+{
+  "$id": "https://github.com/OpenCidian/opencidian-data/schema/char.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "char": {
+      "type": "string"
+    },
+    "hanviet": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "readings": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-zđàáảãạăằắẳẵặâầấẩẫậèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵ]{1,8}$"
+              }
+            },
+            "src": {
+              "type": "string",
+              "enum": [
+                "cc-cedict",
+                "cvdict",
+                "unihan",
+                "makemeahanzi",
+                "hsk",
+                "correction"
+              ]
+            },
+            "via": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "readings",
+            "src"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "pinyin": {
+      "type": "object",
+      "properties": {
+        "readings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "src": {
+          "type": "string",
+          "enum": [
+            "cc-cedict",
+            "cvdict",
+            "unihan",
+            "makemeahanzi",
+            "hsk",
+            "correction"
+          ]
+        }
+      },
+      "required": [
+        "readings",
+        "src"
+      ]
+    },
+    "en": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "src": {
+          "type": "string",
+          "enum": [
+            "cc-cedict",
+            "cvdict",
+            "unihan",
+            "makemeahanzi",
+            "hsk",
+            "correction"
+          ]
+        }
+      },
+      "required": [
+        "text",
+        "src"
+      ]
+    },
+    "strokes": {
+      "type": "object",
+      "properties": {
+        "count": {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "maximum": 9007199254740991
+        },
+        "src": {
+          "type": "string",
+          "enum": [
+            "cc-cedict",
+            "cvdict",
+            "unihan",
+            "makemeahanzi",
+            "hsk",
+            "correction"
+          ]
+        }
+      },
+      "required": [
+        "count",
+        "src"
+      ]
+    },
+    "radical": {
+      "type": "object",
+      "properties": {
+        "char": {
+          "type": "string"
+        },
+        "src": {
+          "type": "string",
+          "enum": [
+            "cc-cedict",
+            "cvdict",
+            "unihan",
+            "makemeahanzi",
+            "hsk",
+            "correction"
+          ]
+        }
+      },
+      "required": [
+        "char",
+        "src"
+      ]
+    },
+    "decomposition": {
+      "type": "object",
+      "properties": {
+        "ids": {
+          "type": "string"
+        },
+        "src": {
+          "type": "string",
+          "enum": [
+            "cc-cedict",
+            "cvdict",
+            "unihan",
+            "makemeahanzi",
+            "hsk",
+            "correction"
+          ]
+        }
+      },
+      "required": [
+        "ids",
+        "src"
+      ]
+    },
+    "etymology": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "ideographic",
+            "pictographic",
+            "pictophonetic"
+          ]
+        },
+        "hint": {
+          "type": "string"
+        },
+        "semantic": {
+          "type": "object",
+          "properties": {
+            "char": {
+              "type": "string"
+            },
+            "hanviet": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-zđàáảãạăằắẳẵặâầấẩẫậèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵ]{1,8}$"
+              }
+            }
+          },
+          "required": [
+            "char",
+            "hanviet"
+          ]
+        },
+        "phonetic": {
+          "type": "object",
+          "properties": {
+            "char": {
+              "type": "string"
+            },
+            "hanviet": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-zđàáảãạăằắẳẵặâầấẩẫậèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵ]{1,8}$"
+              }
+            }
+          },
+          "required": [
+            "char",
+            "hanviet"
+          ]
+        },
+        "src": {
+          "type": "string",
+          "enum": [
+            "cc-cedict",
+            "cvdict",
+            "unihan",
+            "makemeahanzi",
+            "hsk",
+            "correction"
+          ]
+        }
+      },
+      "required": [
+        "type",
+        "src"
+      ]
+    },
+    "simplified": {
+      "type": "object",
+      "properties": {
+        "chars": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "src": {
+          "type": "string",
+          "enum": [
+            "cc-cedict",
+            "cvdict",
+            "unihan",
+            "makemeahanzi",
+            "hsk",
+            "correction"
+          ]
+        }
+      },
+      "required": [
+        "chars",
+        "src"
+      ]
+    },
+    "traditional": {
+      "type": "object",
+      "properties": {
+        "chars": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "src": {
+          "type": "string",
+          "enum": [
+            "cc-cedict",
+            "cvdict",
+            "unihan",
+            "makemeahanzi",
+            "hsk",
+            "correction"
+          ]
+        }
+      },
+      "required": [
+        "chars",
+        "src"
+      ]
+    },
+    "corrected": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "char",
+    "hanviet"
+  ]
+}

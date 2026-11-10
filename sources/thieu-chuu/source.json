@@ -1,0 +1,17 @@
+{
+  "id": "thieu-chuu",
+  "name": "Thiều Chửu, Hán Việt tự điển (digitized by catusf/tudien)",
+  "homepage": "https://github.com/catusf/tudien",
+  "gives": "Hán Việt readings per character (the reading field only; the definitions are not used)",
+  "url": "https://raw.githubusercontent.com/catusf/tudien/a7dd918ecc67de8c2d15034f885d919b9295eba4/dict/TudienThienChuu.tab",
+  "version": "master@a7dd918e (2025-12-19)",
+  "retrieved": "2026-11-10",
+  "sha256": "6266861966039b984126d0fb2852c918727b7e4930888c7ed2a31e66e0f68f28",
+  "license": {
+    "id": "CC0-1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "file": "LICENSE"
+  },
+  "credit": "Thiều Chửu, Hán Việt tự điển (1942); digital edition proofread by Đặng Thế Kiệt, Lê Văn Đặng, Nguyễn Hữu Vinh; file by Phan Cát Tú (catusf/tudien, CC0)",
+  "notes": "The primary Hán Việt source (owner's decision, 2026-11-10): Unihan kVietnamese often gives Nôm readings (细 tới, 搬 bưng) and lacks common characters. Thiều Chửu's text (1942; the author died 1954) is public domain in Vietnam; the file is CC0 per its repo. The proofreaders' credit comes from a third party (bat-nha-key's NGUON-DU-LIEU.md), not from the repo. Simplified headwords in the file appear to be generated from the traditional entries. Readings use the older tone placement (thụy, đọa)."
+}

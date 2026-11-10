@@ -1,0 +1,10 @@
+node_modules/
+.env
+.idea/
+*.log
+
+# Downloaded sources (npm run fetch-sources); checked against sources/*/source.json
+.cache/
+
+# Build output (npm run build); CI publishes it as a release
+dist/

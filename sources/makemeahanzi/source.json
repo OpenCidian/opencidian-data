@@ -1,0 +1,17 @@
+{
+  "id": "makemeahanzi",
+  "name": "Make Me a Hanzi (dictionary.txt)",
+  "homepage": "https://github.com/skishore/makemeahanzi",
+  "gives": "character breakdown (IDS), radical, meaning and sound parts, English gloss",
+  "url": "https://raw.githubusercontent.com/skishore/makemeahanzi/bddc96d41bef78427ed0e034e9f7e31d71fd1b92/dictionary.txt",
+  "version": "master@bddc96d4 (2026-03-08)",
+  "retrieved": "2026-11-10",
+  "sha256": "744bb05d5b0742e9ee35c37791f94d56a173349b3367569e7ca11e510364d203",
+  "license": {
+    "id": "LGPL-3.0-or-later",
+    "url": "https://www.gnu.org/licenses/lgpl-3.0.html",
+    "file": "LGPL"
+  },
+  "credit": "Make Me a Hanzi by Shaunak Kishore (dictionary.txt, derived from Unihan and CJKlib)",
+  "notes": "Only dictionary.txt is used. graphics.txt (stroke paths) is under the Arphic Public License and is not used."
+}

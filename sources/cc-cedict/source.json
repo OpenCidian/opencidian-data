@@ -1,0 +1,18 @@
+{
+  "id": "cc-cedict",
+  "name": "CC-CEDICT",
+  "homepage": "https://cc-cedict.org/wiki/",
+  "gives": "words, pinyin, English definitions, classifiers",
+  "url": "https://www.mdbg.net/chinese/export/cedict/cedict_1_0_ts_utf-8_mdbg.txt.gz",
+  "version": "2026-11-09T04:23:50Z",
+  "retrieved": "2026-11-10",
+  "inRepo": "cedict_1_0_ts_utf-8_mdbg.txt.gz",
+  "sha256": "2e8921a90b9abdca2ce78b8a6af104368f848681b7afe8020043f500fbe0238a",
+  "license": {
+    "id": "CC-BY-SA-4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "file": "../../LICENSE-DATA"
+  },
+  "credit": "CC-CEDICT, published by MDBG; CEDICT © 1997, 1998 Paul Andrew Denisowski",
+  "notes": "MDBG only serves the latest export (no versioned URLs), so the file itself is kept in git. The version is the export's '#! date=' header. To update: npm run fetch-sources -- --update cc-cedict."
+}

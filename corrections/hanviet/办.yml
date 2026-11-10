@@ -1,0 +1,7 @@
+target: { char: "办" }
+field: hanviet.readings
+set: ["biện", "bạn"]
+reason: Thiều Chửu lists bạn first; the reading in use today is biện (biện pháp 办法, biện công 办公)
+evidence: hieu-chu-han src/data/sinoViet-overrides.json (maintainer-checked override, 办 → biện); Thiều Chửu, Hán Việt tự điển, 辦 (bạn, biện)
+by: phucbm
+date: 2026-11-10

@@ -1,0 +1,64 @@
+name: Correction
+description: Suggest a fix to a Hán Việt reading, a Vietnamese meaning, an English definition or pinyin. / Đề xuất sửa âm Hán Việt, nghĩa tiếng Việt, nghĩa tiếng Anh hoặc pinyin.
+title: "Correction: "
+labels: ["correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping. Suggestions are **public** and credited to your GitHub name. A maintainer checks each one and, if it holds, turns it into a correction file (`corrections/`) that says "closes #this issue".
+        Cảm ơn bạn. Đề xuất được **công khai** và ghi tên GitHub của bạn. Người duyệt sẽ kiểm tra và, nếu đúng, tạo một tệp sửa lỗi trong `corrections/`.
+  - type: input
+    id: word
+    attributes:
+      label: Word or character / Từ hoặc chữ
+      description: Simplified or traditional, e.g. 觉得 or 說
+      placeholder: 觉得
+    validations:
+      required: true
+  - type: input
+    id: pinyin
+    attributes:
+      label: Pronunciation (pinyin), if the fix is for one reading only / Pinyin, nếu chỉ sửa cho một cách đọc
+      description: 觉 has jué (to feel) and jiào (a nap). Leave empty if the fix holds for every reading.
+      placeholder: jiào
+  - type: dropdown
+    id: field
+    attributes:
+      label: What is wrong / Sai ở đâu
+      options:
+        - Hán Việt reading / Âm Hán Việt
+        - Vietnamese meaning / Nghĩa tiếng Việt
+        - English definition / Nghĩa tiếng Anh
+        - Pinyin
+        - Missing word / Thiếu từ
+        - Other / Khác
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current value / Giá trị hiện tại
+      description: What OpenCidian says now (copy it from the app or the MCP answer).
+  - type: textarea
+    id: suggested
+    attributes:
+      label: Suggested value / Giá trị đề xuất
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence / Nguồn dẫn chứng
+      description: A dictionary and page (Thiều Chửu, Trần Văn Chánh, Hán Việt tự điển…), a link, or how the word is used. / Từ điển và trang, đường dẫn, hoặc cách dùng.
+    validations:
+      required: true
+  - type: dropdown
+    id: from
+    attributes:
+      label: Sent from / Gửi từ
+      options:
+        - GitHub
+        - Hiểu Chữ Hán
+        - OpenCidian MCP (an AI assistant)
+      default: 0

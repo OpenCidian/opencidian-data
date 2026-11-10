@@ -1,7 +1,8 @@
 name: Release dataset
 
 # On merge to main, when the data can have changed: build, validate and publish the dataset as a GitHub release.
-# Loading it into opencidian-api (POST /internal/sync) comes with plan 001 step 6.
+# Then load it into opencidian-api (POST /internal/sync), so a merged correction goes live.
+# Repo secrets: OPENCIDIAN_API_URL (https://opencidian-api.bmp.workers.dev) and SYNC_SECRET (the API's).
 on:
   push:
     branches: [main]
@@ -42,3 +43,13 @@ jobs:
           tag="data-${v//+/-}"
           gh release create "$tag" dist/release/*.gz dist/release/meta.json dist/release/SHA256SUMS \
             --title "Dataset $v" --notes-file <(node -e 'const m=require("./dist/meta.json");console.log(`Entries: ${m.counts.entries}, characters: ${m.counts.chars}, corrections: ${m.counts.corrections}.\n\nSources:\n`+m.sources.map(s=>`- ${s.name} ${s.version} (${s.license})`).join("\n")+`\n\nLicence: CC BY-SA 4.0. ${m.license.attribution}`)')
+      - name: Load into opencidian-api
+        env:
+          API_URL: ${{ secrets.OPENCIDIAN_API_URL }}
+          SYNC_SECRET: ${{ secrets.SYNC_SECRET }}
+        run: |
+          v=$(cat dist/release/VERSION)
+          tag="data-${v//+/-}"
+          curl -sS --fail-with-body --max-time 900 -X POST "$API_URL/internal/sync" \
+            -H "X-Sync-Secret: $SYNC_SECRET" -H "content-type: application/json" \
+            -d "{\"tag\":\"$tag\"}"
